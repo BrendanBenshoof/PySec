@@ -30,7 +30,7 @@ def install_package(path):
 
 
     working_path = os.path.join(cachePath,certhash)
-    print("Working Path",working_path)
+    #print("Working Path",working_path)
     ensure(working_path)
     with open(os.path.join(working_path,"certfile.txt"),"w") as fp:
         fp.write(hashed_cert)
@@ -41,7 +41,8 @@ def install_package(path):
         with open(fname,"r") as read_fp:
             with open(dest,"w") as write_fp:
                 write_fp.write(read_fp.read())
-
+    print("Package Name is:")
+    print(certhash)
 
 if __name__ == "__main__":
     import argparse
